@@ -18,7 +18,15 @@
             @if ($movie->type)
             <li class="list-group-item"><i>Category</i>: {{$movie->type->type}}</li>                
             @else
-            <li class="list-group-item"><i>Category</i>: No category</li>  
+            <li class="list-group-item"><i>Category</i>: No category</li>
+            @endif
+            @if (count($movie->technologies) != 0)
+            <li class="list-group-item"><i>Technologies<i>:
+            <ul class="list-group col-9">
+            @foreach ($movie->technologies as $item)
+                <li class="list-group-item">{{$item->name}}</li>                
+            @endforeach
+            </ul>
             @endif
           </ul>
     </div>

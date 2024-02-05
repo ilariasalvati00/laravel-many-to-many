@@ -9,7 +9,7 @@ class Technology extends Model
 {
     use HasFactory;
 
-    public function movie(){
+    public function movies(){
         return $this->belongsToMany(Technology::class);
     }
 }

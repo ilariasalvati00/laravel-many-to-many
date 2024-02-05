@@ -31,6 +31,7 @@ class MovieSeeder extends Seeder
         $movie2->poster_image = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSZHKcyuoqlsdtSxgAvAfp9XyHrFDKLp-7l4OAVznw7BZViQGk0";
         $movie2->type_id = 2;
         $movie2->save();
+        $movie2->technologies()->attach(1);
 
         $movie3= new Movie();
         $movie3->title = "Chicago";
@@ -40,5 +41,7 @@ class MovieSeeder extends Seeder
         $movie3->poster_image = "https://pad.mymovies.it/filmclub/2003/01/020/locandina.jpg";
         $movie3->type_id = 1;
         $movie3->save();
+        $movie3->technologies()->attach(1);
+        $movie3->technologies()->attach(3);
     }
 }

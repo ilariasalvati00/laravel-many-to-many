@@ -28,6 +28,24 @@
                 <label for="date">Exit Date</label>
                 <input type="date" class="form-control" id="date" name="date" placeholder="Movie exit date">
             </div>
+
+            <div class="form-group">
+                <label for="type">Movie Type</label>
+                <select class="form-select" aria-label="Default select example" name="type">
+                    @foreach ($types as $type)
+                    <option value="{{$type->id}}">{{$type->type}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+        </div class="form-group">
+            <label for="technology">Technologies</label>
+            <select multiple class="form-select" aria-label="Default select example" name="technologies[]">
+                @foreach ($technologies as $t)
+                <option value="{{$t->id}}">{{$t->name}}</option>
+                @endforeach
+            </select>
+        </div>
             
             <button type="submit" class="btn btn-primary mt-3">Add movie</button>
           </form>
